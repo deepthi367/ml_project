@@ -1,14 +1,12 @@
-<<<<<<< HEAD
-import pickle
+import joblib
 
-model = pickle.load(open('model.pkl', 'rb'))
+# load model
+model = joblib.load("ada_model.joblib")
 
-print(model.feature_names_in_)
-=======
-import pickle
+# sample input (10 features)
+sample = [[20, 5, 30, 4, 1, 40, 0, 13, 22, 135]]
 
-model = pickle.load(open('model.pkl', 'rb'))
+# predict
+prediction = model.predict(sample)
 
-print(model.feature_names_in_)
->>>>>>> d96b7b6116abab498a76d60e8d72c3173703b6b7
-print(len(model.feature_names_in_))
+print("Prediction:", prediction)
